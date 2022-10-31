@@ -24,3 +24,21 @@ Servlet
   Servlet : Lazy init - 싱글톤, 요청이 오면 객체를 생성 (미리하는 방법도 있음)
   Spring : early init - 싱글톤, 요청이 오지 않아도 객체를 미리 생성
 
+Servlet Context - Servlet 처리하는 과정이자 공간
+1. application 
+  Servlet Context 내에 1개만 존재하는 공통저장소
+  Servlet Context에서 다른 모든 저장소에서 접근 가능(유효범위가 context 전체)
+  web application의 시작부터 종료까지 존재
+2. page Context
+  하나의 요청을 하나의 page가 담당
+  request로 부터 요청받은 것을 처리
+  하나의 page는 다른 페이지에 접근 불가 (유효범위가 자신의 페이지만)
+3. Session
+  클라이언트마다 1개씩 부여하는 개별저장소( id, pwd, 장바구니 등등)
+  클라이언트가 접근하는 페이지들에서 모두 접근 가능(편리)
+  Servlet Context 내에 여러 서버 중 메모리 부담이 가장 큼
+  그렇기에 최소한의 정보만 저장할 수 있도록 사용을 최소화해야 함
+4. request
+  요청이 처리되는 동안만 존재
+  가장 부담이 적어서 데이터(페이지)를 전달할 때 가장 먼저 고려할 것
+데이터를 저장할 때 setAttribute, 읽을 때 getAttribute

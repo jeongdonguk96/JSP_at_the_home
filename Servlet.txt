@@ -1,0 +1,26 @@
+Servlet
+  @WebServlet은 @Controller와 @RequestMapping을 합친 기능
+  HttpServlet 클래스를 상속받는다.
+  service 매서드가 항상 따라온다. (init - service - destroy)
+  @Controller이 더 발전된 모습
+  (상속이 없고, 필요한 파라미터만 받아도 되고, 어노테이션도 분리돼 있고,
+  클래스가 아닌 매서드에 매핑하기 때문)
+  
+클라이언트로부터 요청이 오면
+  1-1. 인스턴스가 없으면 서블릿 클래스의 객체를 생성해 init() - service() 실행
+  1-2. 서블릿 컨텍스트에서 확인해 서블릿 인스턴스가 존재하면 service()만 실행
+  2. 서비스가 종료될 때(메모리에서 내려갈 때) destroy() 실행
+  기본적으로 서블릿은 싱글톤(1개 인스턴스만 존재해서 재사용)
+  그래서 인스턴스가 존재하면 init()없이 service만 실행
+
+.jsp파일 요청이 오면
+  1. .JspServlet이 받아 서블릿 인스턴스의 유무를 확인
+  2. 있으면 바로 _jspservice()시행
+  3. 없으면 .jsp를 .java파일로 변환, 그 다음 컴파일해 .class 생성
+  4. 인스턴스 생성 후 _jspinit()으로 초기화
+  5. _jspService()를 실행
+  만약 .jsp파일이 변경되면 위와 같은 과정 똑같이 거침
+  그래서 제일 처음 요청한 사람은 늦은 결과를 얻음
+  Servlet : Lazy init - 싱글톤, 요청이 오면 객체를 생성 (미리하는 방법도 있음)
+  Spring : early init - 싱글톤, 요청이 오지 않아도 객체를 미리 생성
+

@@ -1,0 +1,14 @@
+AWS원격 서버로 홈페이지 접속하는 방법
+1. 원하는 클래스 war파일로 export
+2. 복사해서 aws서버 workapps에 넣고 startup실행
+3. aws서버 퍼블릭IP 복사해 URL에 localhost 대신에 붙여넣기
+
+AWS - cloud computer 서버를 빌리는 방식
+
+  Amazon EC2 : 서버를 빌려 직접 운영하는 방식
+  Amazon RDS : 관계형 DB관리 서비스. 서버 측에서 주기적 백업/모니터링 제공
+
+  on-premise : EC2에 가까움. 사용자가 서버를 직접 운영하는 방식
+  serviceless : RDS 이용하는 것. 서버 내부가 아니라 클라우드 서비스로 처리
+  Region : 데이터센터(물리적 공간)
+  CDN : 정적 리소스(이미지나 라이브러리)를 빠르게 제공해주는 서비스

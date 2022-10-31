@@ -1,0 +1,5 @@
+MIME
+  텍스트 기반 프로토콜에 바이너리 데이터를 전송하기 위해 고안
+  Content-Type헤더에 사용. 데이터 타입을 명시.
+  text/html : 타입-text, 서브타입-html
+  

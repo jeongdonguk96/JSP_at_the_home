@@ -21,7 +21,7 @@ Servlet
   5. _jspService()를 실행
   만약 .jsp파일이 변경되면 위와 같은 과정 똑같이 거침
   그래서 제일 처음 요청한 사람은 늦은 결과를 얻음
-  Servlet : Lazy init - 싱글톤, 요청이 오면 객체를 생성 (미리하는 방법도 있음)
+  Servlet : Lazy init - 싱글톤, 요청이 오면 객체를 생성 (미리하는 방 법도 있음)
   Spring : early init - 싱글톤, 요청이 오지 않아도 객체를 미리 생성
 
 Servlet Context - Servlet 처리하는 과정이자 공간

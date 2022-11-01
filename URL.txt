@@ -1,0 +1,13 @@
+URL패턴
+
+URL을 매핑할 때는 패턴(순서)이가 있다.
+1. exact mapping - 정확한 주소
+  /login/hello.do
+2. path mapping - 경로 매핑
+  /login/~
+3. extension mapping - 확장자 매핑
+  *.do
+4. default mapping - 모든 주소와 매핑
+  /~
+
+Spring은 그냥 Dispatcher Servlet이 모두 다 처리

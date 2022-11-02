@@ -1,0 +1,8 @@
+톰캣
+Web Server - 정적인 서버
+  즉, 코드가 바뀌지 않는 이상 몇번을 요청해도 항상같은 응답을 줌
+  html, css, js, img, video 등
+
+Web Application Server(WAS) - 동적인 서버
+  정적인 서버의 요소들 + 프로세스
+  jsp, asp, php 등

@@ -1,0 +1,4 @@
+jsp
+
+  html안에 java 넣은 것
+  페이지소스도 html로 보임

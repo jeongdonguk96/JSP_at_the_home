@@ -1,0 +1,32 @@
+쿠키
+  클라이언트를 구분하기 위한 기술
+  key와 value로 구성
+  도메인, 유효기간, 패스 정보 가지고 있음
+  아스키 코드로만 구성(필요할 때 인코딩 필요)
+  브라우저에 쿠키를 저장
+  해당 사이트 경로에 도메인, 패스가 일치할 때만 자동 전송
+
+  쿠키 생성 방법
+  Cookie cookie = new Cookie("id", "asdf"); // key와 value를 가진 객체생성
+  cookie.setMaxAge(60*60*24); // 쿠키가 유효한 시간 설정
+  response.addCookie(cookie); // 파라미터에 해당 쿠키 넣기
+
+  쿠키 삭제 방법
+  Cookie cookie = new Cookie("id", ""); // value보다 name 작성이 중요
+  cookie.setMaxAge(0); // 시간을 0으로 설정
+  response.addCookie(cookie);
+
+  쿠키 변경 방법
+  Cookie cookie = new Cookie("id", ""); // value보다 name 작성이 중요
+  cookie.setValue(URLEncoder.encode("qwer"); // value 변경
+  cookie.setDomain("www.google.com"); // 도메인 변경
+  cookie.setPath("/ch2"); // 경로 변경
+  cookie.setMaxAge(60*60*24*7); // 유효 시간 변경
+  response.addCookie(cookie);
+
+  쿠키 읽어오는 방법
+  Cookie[] cookies = request.getCookies(); // 쿠키 읽어올 객체 생성
+  for(Cookie cookie : cookies) {
+      String name = cookie.getName();
+      String value = cookie.getValue();
+  }

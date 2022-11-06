@@ -1,0 +1,13 @@
+@Controller
+@RequestMapping("URL")
+
+컨트롤러의 매개변수에는 두가지 어노테이션이 있다.
+그리고 각 어노테이션은 구문에서 기본적으로 생략되어 있다고 보면 된다.
+
+@RuqeustParam : 기본형이나 String에 붙는 어노테이션
+
+@ModelAttribute : 참조형에 붙는 어노테이션 
+
+BindingResult : value값으로 오는 문자열타입을 정수형으로 타입 변환 해줌
+                    변환값을 BindingResult에 저장하고 (결과나 에러 둘 다)
+                    값을 검증해 다시 BindingResult에 저장해 Controller에 넘겨줌
